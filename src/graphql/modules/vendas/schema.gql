@@ -1,0 +1,22 @@
+type Usuario {
+  idade: Int
+  salario: Float
+  nome: String
+  ativo: Boolean
+  id: ID
+}
+
+type Produto {
+  id: ID
+  nome: String
+  preco: Float
+}
+
+type Venda {
+  id: ID
+  usuario: Usuario
+  produto: Produto
+}
+type Query {
+  venda(id: ID, nome: String): Venda
+}

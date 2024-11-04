@@ -1,0 +1,30 @@
+type Usuario {
+  idade: Int
+  salario: Float
+  nome: String
+  ativo: Boolean
+  id: ID
+}
+
+type Query {
+  usuarios: [Usuario]
+  usuario(nome: String, id: ID): Usuario
+}
+
+input UsuarioInput {
+  idade: Int
+  salario: Float
+  nome: String
+  ativo: Boolean
+}
+
+input FiltroInput {
+  id: ID
+  email: String
+}
+
+type Mutation {
+  criarUsuario(data: UsuarioInput): Usuario!
+  atualizarUsuario(id: ID, data: UsuarioInput): Usuario!
+  deletarUsuario(filtro: FiltroInput!): Boolean
+}
